@@ -1,0 +1,494 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    color: #0095f6;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+/* Input area */
+.input-container {
+    display: flex;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 30px 0 0 30px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #0095f6;
+}
+
+button {
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0077c2;
+}
+
+.secondary-button {
+    background-color: #5851db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.secondary-button:hover {
+    background-color: #4a44b5;
+}
+
+/* Status indicators */
+.status {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.status.info {
+    background-color: #e8f4fd;
+    color: #0077c2;
+}
+
+.status.success {
+    background-color: #e7f7e7;
+    color: #28a745;
+}
+
+.status.error {
+    background-color: #ffe0e0;
+    color: #d32f2f;
+    padding: 15px;
+    line-height: 1.5;
+}
+
+.status.loading {
+    background-color: #f8f9fa;
+    color: #555;
+}
+
+/* Loading animation */
+.loading {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #0095f6;
+    border-radius: 50%;
+    animation: spin 1s ease-in-out infinite;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Download area */
+.download-area {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+}
+
+.preview-container {
+    margin-bottom: 20px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.preview-media {
+    max-width: 100%;
+    max-height: 500px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #0095f6;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.download-button:hover {
+    background-color: #0077c2;
+}
+
+/* Carousel styling */
+.carousel-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.carousel-section h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+}
+
+.carousel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .carousel-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.carousel-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.carousel-item:hover {
+    transform: translateY(-5px);
+}
+
+.thumbnail-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    overflow: hidden;
+}
+
+.thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item:hover .thumbnail {
+    transform: scale(1.05);
+}
+
+.item-type {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.download-item-btn {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    background-color: #0095f6;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.download-item-btn:hover {
+    background-color: #0077e6;
+}
+
+.download-item-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Main item styling */
+.main-item {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.main-item h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.media-container {
+    max-width: 100%;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.media-preview {
+    max-width: 100%;
+    max-height: 500px;
+    display: block;
+    margin: 0 auto;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #0095f6;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: #0077e6;
+}
+
+/* Info section */
+.info-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: left;
+}
+
+.info-section h3 {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.info-section ul {
+    list-style-position: inside;
+    margin-bottom: 20px;
+}
+
+.info-section li {
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.disclaimer {
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+}
+
+/* Utility classes */
+.hidden {
+    display: none;
+}
+
+/* Error tips styling */
+.error-tips {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #fff5f5;
+    border-left: 3px solid #ff6b6b;
+    border-radius: 4px;
+    text-align: left;
+}
+
+.error-tips p {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.error-tips ul {
+    margin: 5px 0 0 20px;
+    padding: 0;
+}
+
+.error-tips li {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Download all container */
+.download-all-container {
+    margin: 15px 0;
+    padding: 12px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+}
+
+.download-all-container p {
+    margin-bottom: 10px;
+    color: #0077c2;
+    font-size: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .input-container {
+        flex-direction: column;
+    }
+    
+    input[type="text"] {
+        border-radius: 30px;
+        margin-bottom: 10px;
+    }
+    
+    button {
+        border-radius: 30px;
+        width: 100%;
+    }
+}
+
+
+.carousel-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.carousel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.carousel-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.thumbnail-container {
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item:hover .thumbnail {
+    transform: scale(1.05);
+}
+
+.item-type {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.download-item-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #0095f6;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-item-btn:hover {
+    background-color: #0077e6;
+}
+
+.download-item-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Add to your CSS */
+.thumbnail-container img[src^="https://via.placeholder.com"] {
+    object-fit: contain;
+    background-color: #f0f0f0;
+}

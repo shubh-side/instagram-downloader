@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Content Downloader</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram Content Downloader</h1>
+        <p class="subtitle">Download reels, images, and stories from Instagram</p>
+        
+        <div class="input-container">
+            <input type="text" id="reelUrl" placeholder="Paste Instagram URL (reel, post, or story)...">
+            <button id="downloadBtn">Download</button>
+        </div>
+        
+        <div id="status" class="status"></div>
+        
+        <div id="downloadAllContainer" class="download-all-container hidden">
+            <p>This might be a post with multiple images/videos.</p>
+            <button id="downloadAllBtn" class="secondary-button">Download All Content</button>
+        </div>
+        
+        <div id="downloadArea" class="download-area hidden">
+            <div class="preview-container">
+                <video id="videoPreview" controls class="hidden preview-media"></video>
+                <img id="imagePreview" class="hidden preview-media">
+            </div>
+            <a id="downloadLink" class="download-button hidden">Download Content</a>
+        </div>
+        
+        <div class="info-section">
+            <h3>Supported Instagram Content:</h3>
+            <ul>
+                <li>Reels - Short video clips</li>
+                <li>Posts - Single images and videos</li>
+                <li>Carousel Posts - Multiple images/videos</li>
+                <li>Stories - Temporary content (must be public)</li>
+            </ul>
+            <p class="disclaimer">Note: This tool is for personal use only. Please respect copyright and Instagram's Terms of Service.</p>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
